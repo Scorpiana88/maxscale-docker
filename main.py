@@ -1,8 +1,13 @@
-#  CNA 350 Realworld Project
-#  Instructor: Zach Rubin, zrubin@rtc.edu
-#  Christiana Freeman, csfreeman@student.rtc.edu
-#  with help from TJ Dewey, tjdewey@student.rtc.edu
+##  CNA 350 Realworld Project
+##  Instructor: Zach Rubin, zrubin@rtc.edu
+##  Christiana Freeman, csfreeman@student.rtc.edu
+##  with help from TJ Dewey, tjdewey@student.rtc.edu
 #  sources: stackoverflow.com
+
+# DESCRIPTION
+
+# This python code will talk to the Maxscale instance and perform the following queries requested which are The last 10 rows of zipcodes_one
+# The first 10 rows of zipcodes_two, The largest zipcode in zipcodes_one, The smallest zipcode in zipcodes_two and then it will print the output to the console
 
 
 import mysql.connector
