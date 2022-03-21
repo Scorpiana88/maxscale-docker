@@ -59,3 +59,6 @@ def main():
     question_four(curs)  
      
       conn.close()
+
+    if __name__ == '__main__':
+    main()
