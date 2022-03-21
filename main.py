@@ -53,10 +53,10 @@ def main():
      conn = connect()
      curs = conn.cursor()
      
-    question_one(curs)
-    question_two(curs)
-    question_three(curs)
-    question_four(curs)  
+     question_one(curs)
+     question_two(curs)
+     question_three(curs)
+     question_four(curs)  
      
       conn.close()
 
