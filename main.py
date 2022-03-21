@@ -14,7 +14,7 @@ def connect():
 
 
 def question_one(cursor):
-    query = ## first SQL query here, in quotation ##
+    query = SELECT Zipcode FROM zipcodes_one.zipcodes_one ORDER BY Zipcode DESC LIMIT 10
      cursor.execute(query)
      answer = cursor.fetchall()
      print ('Last 10 of zipcodes 1')
@@ -23,7 +23,7 @@ def question_one(cursor):
      return
 
 def question_two(cursor):
-     query = ## first SQL query here, in quotation ##
+     query = SELECT Zipcode FROM zipcodes_two.zipcodes_two ORDER BY Zipcode LIMIT 10
      cursor.execute(query)
      answer = cursor.fetchall()
      print ('First 10 of zipcodes 2')
