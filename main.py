@@ -32,7 +32,7 @@ def question_two(cursor):
      return
 
 def question_three(cursor):
-     query = ## first SQL query here, in quotation ##
+     query = "SELECT MAX(DISTINCT Zipcode) FROM zipcodes_one.zipcodes_one ORDER BY Zipcode LIMIT 1"; 
      cursor.execute(query)
      answer = cursor.fetchall()
      print ('Largest in zipcodes 1')
@@ -41,7 +41,7 @@ def question_three(cursor):
      return
 
 def question_four(cursor):
-     query = ## first SQL query here, in quotation ##
+     query = "SELECT Zipcode FROM zipcodes_two.zipcodes_two ORDER BY Zipcode LIMIT 1";
      cursor.execute(query)
      answer = cursor.fetchall()
      print ('smallest in zipcodes 2')
