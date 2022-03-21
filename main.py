@@ -14,7 +14,7 @@ def connect():
 
 
 def question_one(cursor):
-     query = "zipcodes 1"
+    query = ## first SQL query here, in quotation ##
      cursor.execute(query)
      answer = cursor.fetchall()
      print ('Last 10 of zipcodes 1')
@@ -23,7 +23,7 @@ def question_one(cursor):
      return
 
 def question_two(cursor):
-     query = "zipcodes1 2"
+     query = ## first SQL query here, in quotation ##
      cursor.execute(query)
      answer = cursor.fetchall()
      print ('First 10 of zipcodes 2')
@@ -32,7 +32,7 @@ def question_two(cursor):
      return
 
 def question_three(cursor):
-     query = "zipcodes 1"
+     query = ## first SQL query here, in quotation ##
      cursor.execute(query)
      answer = cursor.fetchall()
      print ('Largest in zipcodes 1')
@@ -41,7 +41,7 @@ def question_three(cursor):
      return
 
 def question_four(cursor):
-     query = "zipcodes 2"
+     query = ## first SQL query here, in quotation ##
      cursor.execute(query)
      answer = cursor.fetchall()
      print ('smallest in zipcodes 2')
@@ -52,14 +52,13 @@ def question_four(cursor):
 def main():
      conn = connect()
      curs = conn.cursor()
-     
+
      question_one(curs)
      question_two(curs)
      question_three(curs)
-     question_four(curs)  
-     
+     question_four(curs)
+
      conn.close()
-
-   if __name__ == '__main__':
+     
+    if __name__ == '__main__':
     main()
-
