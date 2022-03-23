@@ -1,4 +1,4 @@
-##  CNA 350 Realworld Project
+##  CNE 370 Realworld Project
 ##  Instructor: Zach Rubin, zrubin@rtc.edu
 ##  Christiana Freeman, csfreeman@student.rtc.edu
 ##  with help from TJ Dewey, tjdewey@student.rtc.edu
