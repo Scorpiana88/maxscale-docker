@@ -34,7 +34,7 @@ services:
         ports:
             - "4003:3306"
 
-    maxscale:
+    Maxscale Instance:
         image: mariadb/maxscale:latest
         depends_on:
             - master
