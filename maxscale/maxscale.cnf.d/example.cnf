@@ -1,35 +1,37 @@
+[maxscale]
+threads=8
+
 [server1]
 type=server
-address=master
+address=master1
 port=3306
-protocol=MariaDBBackend
+
 
 [server2]
 type=server
-address=slave1
+address=master2
 port=3306
-protocol=MariaDBBackend
+
 
 [server3]
 type=server
 address=slave2
 port=3306
-protocol=MariaDBBackend
+
 
 # Monitor for the servers
 # This will keep MaxScale aware of the state of the servers.
 # MySQL Monitor documentation:
 # https://github.com/mariadb-corporation/MaxScale/blob/2.3/Documentation/Monitors/MariaDB-Monitor.md
 
-[MariaDB-Monitor]
+[MySQL-Monitor]
 type=monitor
 module=mariadbmon
-servers=server1,server2,server3
-user=maxuser
-password=maxpwd
-auto_failover=true
-auto_rejoin=true
-enforce_read_only_slaves=1
+servers=master1,master2,server3
+user=monitoruser
+password=7SP1Zcsow8TG+9EkEBVEbaKa
+monitor_interval=3306
+
 
 # Service definitions
 # Service Definition for a read-only service and a read/write splitting service.
@@ -37,13 +39,12 @@ enforce_read_only_slaves=1
 # ReadConnRoute documentation:
 # https://github.com/mariadb-corporation/MaxScale/blob/2.3/Documentation/Routers/ReadConnRoute.md
 
-[Read-Only-Service]
+[Sharded-Service]
 type=service
-router=readconnroute
+router=schemarouter
 servers=server1,server2,server3
-user=maxuser
-password=maxpwd
-router_options=slave
+user=sharduser
+password=YqztlYGDvZ8tVMe3GUm9XCwQi
 
 # ReadWriteSplit documentation:
 # https://github.com/mariadb-corporation/MaxScale/blob/2.3/Documentation/Routers/ReadWriteSplit.md
@@ -59,14 +60,14 @@ master_failure_mode=fail_on_write
 # Listener definitions for the services
 # Listeners represent the ports the services will listen on.
 
-[Read-Only-Listener]
+[Sharded-Service-Listener]
 type=listener
-service=Read-Only-Service
-protocol=MySQLClient
-port=4008
+service=Sharded-Service
+protocol=MariaDBClient
+port=4000
 
-[Read-Write-Listener]
+[Sharded-Service-Listener]
 type=listener
-service=Read-Write-Service
-protocol=MySQLClient
+service=Sharded-Service
+protocol=MariaDBClient
 port=4006
